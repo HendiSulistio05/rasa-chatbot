@@ -1,0 +1,56 @@
+version: "3.1"
+
+nlu:
+  - intent: ask_scholarship
+    examples: |
+      - Apa saja beasiswa yang tersedia di UKRIDA?
+      - Bagaimana cara mendaftar beasiswa di UKRIDA?
+      - Informasi tentang beasiswa di UKRIDA
+
+  - intent: ask_tuition_fee
+    examples: |
+      - Berapa biaya kuliah di UKRIDA?
+      - Bisa berikan rincian biaya pendidikan di UKRIDA?
+      - Biaya kuliah per semester di UKRIDA berapa?
+
+  - intent: ask_programs
+    examples: |
+      - Program studi apa saja yang ditawarkan di UKRIDA?
+      - Jurusan apa saja yang ada di UKRIDA?
+      - Fakultas dan program studi di UKRIDA?
+
+  - intent: ask_vision_mission
+    examples: |
+      - Apa visi dan misi UKRIDA?
+      - Bisa jelaskan visi misi UKRIDA?
+      - Visi dan misi Universitas Kristen Krida Wacana?
+
+  - intent: ask_address
+    examples: |
+      - Di mana lokasi kampus UKRIDA?
+      - Alamat UKRIDA di mana?
+      - Lokasi kampus UKRIDA?
+
+  - intent: ask_contact
+    examples: |
+      - Bagaimana cara menghubungi UKRIDA?
+      - Kontak person UKRIDA?
+      - Nomor telepon UKRIDA?
+      - intent: greet
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - hey there
+      - what's up
+      - hai
+      - assalamualaikum
+      - salam
+      - selamat pagi
+      - selamat siang
+      - selamat sore
+      - selamat malam

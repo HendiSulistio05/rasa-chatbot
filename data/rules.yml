@@ -1,0 +1,57 @@
+version: "3.1"
+
+rules:
+  - rule: Menyapa pengguna saat mereka menyapa
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Mengucapkan selamat tinggal saat pengguna mengucapkan selamat tinggal
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Menjawab tantangan bot
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Memberikan informasi beasiswa
+    steps:
+      - intent: ask_scholarship
+      - action: utter_scholarship_info
+
+  - rule: Memberikan informasi biaya kuliah
+    steps:
+      - intent: ask_tuition_fee
+      - action: utter_tuition_fee_info
+
+  - rule: Memberikan informasi program studi
+    steps:
+      - intent: ask_programs
+      - action: utter_programs_info
+
+  - rule: Memberikan informasi visi dan misi
+    steps:
+      - intent: ask_vision_mission
+      - action: utter_vision_mission_info
+
+  - rule: Memberikan informasi alamat
+    steps:
+      - intent: ask_address
+      - action: utter_address_info
+
+  - rule: Memberikan informasi kontak
+    steps:
+      - intent: ask_contact
+      - action: utter_contact_info
+
+  - rule: Memberikan informasi program sertifikasi
+    steps:
+      - intent: ask_certification_programs
+      - action: utter_certification_programs_info
+
+  - rule: Memberikan informasi pusat pelatihan bahasa
+    steps:
+      - intent: ask_language_center
+      - action: utter_language_center_info

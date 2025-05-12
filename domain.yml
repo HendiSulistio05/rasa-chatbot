@@ -1,0 +1,61 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_scholarship
+  - ask_tuition_fee
+  - ask_programs
+  - ask_vision_mission
+  - ask_address
+  - ask_contact
+  - ask_certification_programs
+  - ask_language_center
+
+responses:
+  utter_happy:
+    - text: "I'm glad to hear that! 😊"
+
+  utter_greet:
+    - text: "Hi! Ukridian, Apakah ada yang dapat kami bantu?"
+    - text: "Halo Ukridian! Ada yang bisa kami bantu hari ini?"
+    - text: "Selamat datang di UKRIDA! Ada pertanyaan seputar kampus?"
+
+  utter_goodbye:
+    - text: "Sampai jumpa!"
+
+  utter_iamabot:
+    - text: "Saya adalah bot yang didukung oleh Rasa."
+
+  utter_scholarship_info:
+    - text: "UKRIDA menawarkan berbagai beasiswa. Informasi lengkap dapat dilihat di https://ukrida.ac.id/scholarship/1/ukrida-scholarship."
+
+  utter_tuition_fee_info:
+    - text: "Rincian biaya pendidikan di UKRIDA dapat ditemukan di https://ukrida.ac.id/admission/tuitionfee/4/biaya-pendidikan."
+
+  utter_programs_info:
+    - text: "UKRIDA memiliki beberapa fakultas dengan program studi sebagai berikut:\n\nFakultas Kedokteran dan Ilmu Kesehatan:\n- Kedokteran\n- Profesi Dokter\n- Optometri\n- Pendidikan Profesi Ners (Sarjana Keperawatan dan Profesi Ners)\n\nFakultas Ekonomi dan Bisnis:\n- Manajemen\n- Akuntansi\n- Magister Manajemen\n\nFakultas Teknik dan Ilmu Komputer:\n- Teknik Elektro\n- Teknik Industri\n- Teknik Sipil\n- Informatika\n- Sistem Informasi\n\nFakultas Psikologi:\n- Psikologi\n\nFakultas Ilmu Sosial dan Humaniora:\n- Sastra Inggris\n\nInformasi lebih lanjut dapat dilihat di https://ukrida.ac.id/faculty/academic/fakultas."
+
+  utter_vision_mission_info:
+    - text: "Visi dan misi UKRIDA dapat dilihat di https://ukrida.ac.id/aboutus/vision/visi-misi-dan-strategis."
+
+  utter_address_info:
+    - text: "UKRIDA memiliki dua kampus:\n\nKampus I:\nJl. Tanjung Duren Raya no. 4, Jakarta Barat\nTelp. 021 566 6952\nFax. 021 566 6956\n\nKampus II:\nJl. Arjuna Utara no. 6, Jakarta Barat\nTelp. 021 5694 2061\nFax. 021 563 1731"
+
+  utter_contact_info:
+    - text: "Untuk menghubungi UKRIDA, Anda dapat menggunakan kontak berikut:\n\nUnit Admisi:\nTelp: (021) 566 6952 ext. 1171, 1172\nWhatsApp: +62 812 809 61970\nEmail: admisi@ukrida.ac.id\n\nEmail Humas: humas@ukrida.ac.id"
+
+  utter_certification_programs_info:
+    - text: "UKRIDA menawarkan program sertifikasi seperti Certified Human Capital Professional (CHCP). Informasi lebih lanjut dapat dilihat di https://ukrida.ac.id/certificate/1/certified-human-capital-professional."
+
+  utter_language_center_info:
+    - text: "UKRIDA memiliki Language Training Center yang menyediakan pendidikan bahasa berkualitas tinggi. Informasi lebih lanjut dapat dilihat di https://ventura2.ukrida.ac.id/home/index/ltc/6/language-training-center."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
