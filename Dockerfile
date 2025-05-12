@@ -1,24 +1,24 @@
-# Gunakan Python image sebagai dasar
-FROM python:3.10-slim
+# Stage 1: Build stage
+FROM python:3.8-slim AS builder
 
-# Install supervisor dan dependensi lain yang diperlukan
-RUN apt-get update && apt-get install -y supervisor gcc python3-dev libpq-dev && apt-get clean
-
-# Install Rasa
-RUN pip install rasa==3.6.19
-
-# Salin semua file proyek ke dalam container
-COPY . /app
+# Set working directory
 WORKDIR /app
 
-# Install dependency tambahan jika ada
-RUN pip install --no-cache-dir -r requirements.txt || true
+# Copy requirements file
+COPY requirements.txt .
 
-# Salin file konfigurasi supervisord ke dalam container
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port untuk Rasa core dan action server
-EXPOSE 5005 5055
+# Stage 2: Final stage
+FROM python:3.8-slim
 
-# Jalankan supervisord untuk mengelola kedua proses
-CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+# Set working directory
+WORKDIR /app
+
+# Copy only the necessary files from the builder stage
+COPY --from=builder /usr/local/lib/python3.8/site-packages /usr/local/lib/python3.8/site-packages
+COPY . .
+
+# Command to run your application
+CMD ["python", "your_script.py"]  # Ganti dengan script utama Anda
