@@ -8,5 +8,5 @@ WORKDIR /app
 RUN rasa train
 
 # Jalankan server Rasa
-CMD ["run", "--enable-api", "--cors", "*", "--debug", "--port", "8000"]
+CMD ["run", "--enable-api", "--cors", "*", "--debug", "--port", "5055"]
 
