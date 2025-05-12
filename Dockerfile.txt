@@ -1,0 +1,14 @@
+# Gunakan image Rasa versi 3.6.19 yang sesuai
+FROM rasa/rasa:3.6.19-full
+
+# Copy semua file project ke container
+COPY . /app
+
+# Pindah ke folder kerja
+WORKDIR /app
+
+# Install requirements jika ada (misalnya untuk actions.py)
+RUN pip install -r requirements.txt || true
+
+# Jalankan Rasa server sebagai REST API
+CMD ["run", "--enable-api", "--cors", "*", "--debug"]
