@@ -1,6 +1,0 @@
-rasa==3.6.19
-rasa-sdk==3.6.2
-setuptools>=58.0.0
-wheel
-requests
-python-3.8.10
