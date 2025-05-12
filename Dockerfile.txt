@@ -1,1 +1,3 @@
-web: rasa run --enable-api --cors "*" --port $PORT
+RUN python -m venv /opt/venv && \
+    /opt/venv/bin/pip install --upgrade pip setuptools wheel && \
+    /opt/venv/bin/pip install -r requirements.txt
