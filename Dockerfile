@@ -1,8 +1,11 @@
-# Gunakan image resmi Rasa sesuai versi Anda
-FROM rasa/rasa:3.6.19-full
+# Gunakan Python image sebagai dasar
+FROM python:3.10-slim
 
-# Install supervisor
-RUN apt-get update && apt-get install -y supervisor
+# Install supervisor dan dependensi lain yang diperlukan
+RUN apt-get update && apt-get install -y supervisor gcc python3-dev libpq-dev && apt-get clean
+
+# Install Rasa
+RUN pip install rasa==3.6.19
 
 # Salin semua file proyek ke dalam container
 COPY . /app
