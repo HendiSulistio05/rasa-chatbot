@@ -1,12 +1,10 @@
-FROM rasa/rasa:3.6.19
+FROM rasa/rasa:3.6.19-full
 
-# Salin semua file proyek ke dalam container
-COPY . /app
 WORKDIR /app
+COPY . /app
 
-# Training model (opsional jika model sudah ada)
-RUN rasa train
+RUN pip install -r requirements.txt
 
-# Jalankan server Rasa
-CMD ["run", "--enable-api", "--cors", "*", "--debug", "--port", "5055"]
+EXPOSE 5005 5055
 
+CMD ["sh", "-c", "rasa run -i 0.0.0.0 -p 5005 --enable-api --cors '*' --debug & rasa run actions -p 5055 && wait"]
