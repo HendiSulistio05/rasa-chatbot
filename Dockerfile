@@ -8,5 +8,5 @@ RUN pip install -r requirements.txt
 EXPOSE 5005
 
 CMD ["rasa", "train"]
-CMD ["rasa", "run", "-i", "0.0.0.0", "-p", "5005", "--enable-api", "--cors", "*", "--debug"]
+CMD ["rasa", "run", "-i", "0.0.0.0", "-p", "5005"]
 
